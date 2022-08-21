@@ -1,0 +1,12 @@
+.btn {
+    /*alteramos a cor de fundo do botão para verde*/
+    background-color: darkgreen;
+    color: white;
+    padding: 6px;
+    border: 1px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: darkolivegreen;
+}
