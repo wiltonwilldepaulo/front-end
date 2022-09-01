@@ -63,7 +63,7 @@
                                     <td>SAIJYN</td>
                                     <td>000.000.000-00</td>
                                     <td>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                        <div class="btn-group" role="group">
                                             <button type="button" class="btn btn-warning">
                                                 <i class="fa-solid fa-pen-to-square"> </i> Editar
                                             </button>
