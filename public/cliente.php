@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">
+                        <a class="nav-link active" aria-current="page" href="index.php">
                             <i class="fa-solid fa-house"> </i> Início
                         </a>
                     </li>
@@ -122,6 +122,8 @@
     </div>
 
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/request.js"></script>
+    <script src="js/cliente.js"></script>
 </body>
 
 </html>
