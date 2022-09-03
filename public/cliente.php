@@ -96,8 +96,23 @@
                                     <td>Ação</td>
                                 </tr>
                             </thead>
-                            <tbody id="dados">
-                                
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>VEDITA</td>
+                                    <td>SAIJYN</td>
+                                    <td>000.000.000-00</td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-warning">
+                                                <i class="fa-solid fa-pen-to-square"> </i> Editar
+                                            </button>
+                                            <button type="button" class="btn btn-danger">
+                                                <i class="fa-solid fa-trash"> </i> Excluir
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
