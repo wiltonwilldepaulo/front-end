@@ -11,9 +11,10 @@ async function lista_cliente() {
     const response = await send('listacliente.php', opt);
     //CONVERTEMOS O A RESPOSTA  PARA TEXTO
     //QUE TERÁ UMA ESTRUTURA HTML
-    const html = await response.text;
+    const html = await response.text();
     //PRINTAMOS NO CONSOLE O RESULTADO
-    console.log(html);
+    //console.log(html);
+    document.getElementById('dados').innerHTML = html;
 }
 //MAPEAMOS O EVENTO DE CARREGAMENTO DO DOCUMENTO
 document.addEventListener("DOMContentLoaded", function () {
