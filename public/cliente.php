@@ -50,7 +50,27 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12">
-
+                            <div class="alert alert-warning" role="alert">
+                                Todos os campos com <span class="text-danger"> * </span> são obrigatórios para o cadastro!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <form method="post" name="frmcliente" id="frmcliente">
+                                <div class="mb-3">
+                                    <label for="nome" class="form-label">Nome <span class="text-danger"> * </span> </label>
+                                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome!" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="sobrenome" class="form-label">Sobre nome <span class="text-danger"> * </span> </label>
+                                    <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobre nome!" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cpf" class="form-label">Cpf</label>
+                                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF!">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -75,7 +95,6 @@
                         </button>
                     </div>
                     <div class="card-body">
-
                         <div class="row">
                             <div class="col-12">
                                 <div class="input-group mb-3">
@@ -96,23 +115,8 @@
                                     <td>Ação</td>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>VEDITA</td>
-                                    <td>SAIJYN</td>
-                                    <td>000.000.000-00</td>
-                                    <td>
-                                        <div class="btn-group" role="group">
-                                            <button type="button" class="btn btn-warning">
-                                                <i class="fa-solid fa-pen-to-square"> </i> Editar
-                                            </button>
-                                            <button type="button" class="btn btn-danger">
-                                                <i class="fa-solid fa-trash"> </i> Excluir
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
+                            <tbody id="dados">
+                                
                             </tbody>
                         </table>
                     </div>

@@ -1,24 +1,6 @@
 <?php
-$clientes = array(
-    [
-        "id"         => '1',
-        "nome"       => 'WILTON',
-        "sobre_nome" => 'WILL DE PAULO',
-        "cpf"        => '000.000.000-00'
-    ],
-    [
-        "id"         => '2',
-        "nome"       => 'JOAQUIM',
-        "sobre_nome" => 'DAS DORES',
-        "cpf"        => '222.222.222-22'
-    ],
-    [
-        "id"         => '3',
-        "nome"       => 'MARIINHAS',
-        "sobre_nome" => 'RAIMUNDA',
-        "cpf"        => '333.333.333-33'
-    ]
-);
+include "Conection.php";
+$clientes = $pdo->query('select * from pessoa;')->fetchAll();
 $dados = "";
 foreach ($clientes as $key => $value) {
     $dados = $dados . "<tr>" .
@@ -26,6 +8,18 @@ foreach ($clientes as $key => $value) {
         "<td>" . $value['nome'] . "</td>" .
         "<td>" . $value['sobre_nome'] . "</td>" .
         "<td>" . $value['cpf'] . "</td>" .
+        "<td>" .
+        "<td>" .
+        "<div class='btn-group' role='group'>" .
+        "<a href='alterar.php?id=" . $value['id'] . "' type='button' class='btn btn-warning'>" .
+        "<i class='fa-solid fa-pen-to-square'> </i> Editar" .
+        "</a>" .
+        "<button type='button' class='btn btn-danger'>" .
+        "<i class='fa-solid fa-trash'> </i> Excluir" .
+        "</button>" .
+        "</div>" .
+        "</td>" .
+        "</td>" .
         "</tr>";
 }
 echo $dados;
