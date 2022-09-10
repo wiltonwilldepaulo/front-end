@@ -46,9 +46,7 @@ if ($id) {
                                             Nome
                                             <span class="text-danger"> * </span>
                                         </label>
-                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome!" required autofocus value="<?php if (isset($cliente['nome'])) {
-                                                                                                                                                                    echo $cliente['nome'];
-                                                                                                                                                                } ?>">
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome!" required autofocus value="<? if (isset($cliente['nome'])) { echo $cliente['nome']; } ?>">
                                     </div>
                                     <div class="mb-3">
                                         <label for="sobrenome" class="form-label">
