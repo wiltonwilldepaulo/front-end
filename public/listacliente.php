@@ -11,7 +11,7 @@ foreach ($clientes as $key => $value) {
         "<td>" .
         "<td>" .
         "<div class='btn-group' role='group'>" .
-        "<a href='alterar.php?id=" . $value['id'] . "' type='button' class='btn btn-warning'>" .
+        "<a href='cliente.php?id=" . $value['id'] . "' type='button' class='btn btn-warning'>" .
         "<i class='fa-solid fa-pen-to-square'> </i> Editar" .
         "</a>" .
         "<button type='button' class='btn btn-danger'>" .

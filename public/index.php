@@ -25,7 +25,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cliente.php">
+                        <a class="nav-link" href="listaclientes.php">
                             <i class="fa-solid fa-user"> </i> Clientes
                         </a>
                     </li>

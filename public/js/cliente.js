@@ -1,3 +1,6 @@
+const atualiza = document.querySelector("#btnatualiza");
+const nome = document.querySelector("#nome");
+
 async function lista_cliente() {
     //monstamos a configuração da requição
     //ao servidor http
@@ -20,3 +23,10 @@ async function lista_cliente() {
 document.addEventListener("DOMContentLoaded", function () {
     lista_cliente();
 });
+
+atualiza.addEventListener('click', lista_cliente());
+
+function mudar() {
+    alert('Teste de evento de mudança')
+}
+nome.addEventListener('keypress', function () { mudar() });
