@@ -5,6 +5,7 @@ $id = (filter_input(INPUT_GET, 'id', FILTER_SANITIZE_ENCODED)
 ) ?
     filter_input(INPUT_GET, 'id', FILTER_SANITIZE_ENCODED)
     : false;
+
 if ($id) {
     $cliente = $pdo->query("select * from pessoa where id = " . $id)
         ->fetch();
@@ -46,21 +47,21 @@ if ($id) {
                                             Nome
                                             <span class="text-danger"> * </span>
                                         </label>
-                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome!" required autofocus value="<? if (isset($cliente['nome'])) { echo $cliente['nome']; } ?>">
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome!" required autofocus value="<? echo isset($cliente['nome']) ? $cliente['nome'] : ''; ?>">
                                     </div>
                                     <div class="mb-3">
                                         <label for="sobrenome" class="form-label">
                                             Sobre nome
                                             <span class="text-danger"> * </span>
                                         </label>
-                                        <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobre nome!" required>
+                                        <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobre nome!" required value="<? echo isset($cliente['sobre_nome']) ? $cliente['sobre_nome'] : ''; ?>">
                                     </div>
                                     <div class="mb-3">
                                         <label for="cpf" class="form-label">
                                             CPF
                                             <span class="text-danger"> * </span>
                                         </label>
-                                        <input type="text" class="form-control" id="CPF" name="CPF" placeholder="Digite seu CPF!" required>
+                                        <input type="text" class="form-control" id="CPF" name="CPF" placeholder="Digite seu CPF!" required value="<? echo isset($cliente['cpf']) ? $cliente['cpf'] : ''; ?>">
                                     </div>
                                 </form>
                             </div>
@@ -79,6 +80,7 @@ if ($id) {
         </div>
     </div>
     </div>
+    <script src="js/request.js"></script>
     <script src="js/clientes.js"></script>
 </body>
 
