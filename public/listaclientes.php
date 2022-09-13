@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -43,21 +42,23 @@
     <div class="modal fade" id="cadastrocliente" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Dados do cliente</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="alert alert-warning" role="alert">
-                                Todos os campos com <span class="text-danger"> * </span> são obrigatórios para o cadastro!
+                <form method="post" name="frmcliente" id="frmcliente">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Dados do cliente</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="alert alert-warning" role="alert">
+                                    Todos os campos com <span class="text-danger"> * </span> são obrigatórios para o cadastro!
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <form method="post" name="frmcliente" id="frmcliente">
+                        <div class="row">
+                            <div class="col-12">
+
                                 <div class="mb-3">
                                     <label for="nome" class="form-label">Nome <span class="text-danger"> * </span> </label>
                                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome!" required>
@@ -70,18 +71,19 @@
                                     <label for="cpf" class="form-label">Cpf</label>
                                     <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF!">
                                 </div>
-                            </form>
+                            </div>
                         </div>
+
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                        Fechar
-                    </button>
-                    <button type="button" class="btn btn-success">
-                        <i class="fa-solid fa-floppy-disks"> </i> Salvar
-                    </button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                            Fechar
+                        </button>
+                        <button id="btnsalvar" type="button" class="btn btn-success">
+                            <i class="fa-solid fa-floppy-disks"> </i> Salvar
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -127,7 +129,6 @@
             </div>
         </div>
     </div>
-
     <script src="js/bootstrap.min.js"></script>
     <script src="js/request.js"></script>
     <script src="js/cliente.js"></script>

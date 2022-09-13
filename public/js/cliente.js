@@ -1,5 +1,5 @@
 const atualiza = document.querySelector("#btnatualiza");
-const nome = document.querySelector("#nome");
+const salvar = document.querySelector("#btnsalvar");
 
 async function lista_cliente() {
     //monstamos a configuração da requição
@@ -19,6 +19,20 @@ async function lista_cliente() {
     //console.log(html);
     document.getElementById('dados').innerHTML = html;
 }
+
+async function inserir() {
+    const form = document.querySelector("#frmcliente");
+    const formData = new FormData(form);
+    const opt = {
+        method: "POST",
+        mode: 'cors',
+        body: formData,
+        cache: 'default'
+    }
+    const response = await send('cadastro.php', opt);
+    const dados = await response.text();
+    console.log(dados);
+}
 //MAPEAMOS O EVENTO DE CARREGAMENTO DO DOCUMENTO
 document.addEventListener("DOMContentLoaded", function () {
     lista_cliente();
@@ -26,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 atualiza.addEventListener('click', lista_cliente());
 
-function mudar() {
-    alert('Teste de evento de mudança')
-}
-nome.addEventListener('keypress', function () { mudar() });
+salvar.addEventListener('click', function () {
+    inserir();
+});
