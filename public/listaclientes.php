@@ -48,11 +48,11 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-
                         <div class="row">
                             <div class="col-12">
                                 <div class="alert alert-warning" role="alert">
-                                    Todos os campos com <span class="text-danger"> * </span> são obrigatórios para o cadastro!
+                                    Todos os campos com <span class="text-danger"> * </span> são obrigatórios para o
+                                    cadastro!
                                 </div>
                             </div>
                         </div>
@@ -60,11 +60,13 @@
                             <div class="col-12">
 
                                 <div class="mb-3">
-                                    <label for="nome" class="form-label">Nome <span class="text-danger"> * </span> </label>
+                                    <label for="nome" class="form-label">Nome <span class="text-danger"> * </span>
+                                    </label>
                                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome!" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="sobrenome" class="form-label">Sobre nome <span class="text-danger"> * </span> </label>
+                                    <label for="sobrenome" class="form-label">Sobre nome <span class="text-danger"> *
+                                        </span> </label>
                                     <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobre nome!" required>
                                 </div>
                                 <div class="mb-3">
@@ -77,10 +79,10 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                            Fechar
+                            <i class="fa-solid fa-xmark"> </i> Fechar
                         </button>
                         <button id="btnsalvar" type="button" class="btn btn-success">
-                            <i class="fa-solid fa-floppy-disks"> </i> Salvar
+                            <i class="fa-solid fa-floppy-disk"></i> Salvar
                         </button>
                     </div>
                 </form>
@@ -129,7 +131,21 @@
             </div>
         </div>
     </div>
+    <!-- TEMOS OS RECURSSOS DA BIBLIOTECA JQUERY -->
+    <script src="js/jquery.min.js"></script>
+    <!-- TEMOS OS RECURSSOS DA BIBLIOTECA BOOTSTRAP -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- TEMOS OS RECURSSOS DA BIBLIOTECA DE MASCARAS -->
+    <script src="js/inputmask.min.js"></script>
+    <script src="js/inputmask.extensions.min.js"></script>
+    <script src="js/inputmask.numeric.extensions.min.js"></script>
+    <script src="js/jquery.inputmask.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/localization/messages_pt_BR.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/localization/methods_pt.min.js"></script>
+
     <script src="js/request.js"></script>
     <script src="js/cliente.js"></script>
 </body>

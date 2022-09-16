@@ -1,6 +1,28 @@
 const atualiza = document.querySelector("#btnatualiza");
 const salvar = document.querySelector("#btnsalvar");
 
+//CONFIGURAÇÕES DOS PARAMENTRO DE VALIDAÇÃO DO FORMULÁRIO
+$('#frmcliente').validate({
+    rules: {
+        edtimagems: {
+            required: true,
+            file: true,
+        },
+        agree: "required"
+    },
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
+    },
+    unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
+    }
+});
+
 async function lista_cliente() {
     //monstamos a configuração da requição
     //ao servidor http
@@ -41,5 +63,16 @@ document.addEventListener("DOMContentLoaded", function () {
 atualiza.addEventListener('click', lista_cliente());
 
 salvar.addEventListener('click', function () {
-    inserir();
+    //RECEBEMOS O RESULTADO DA VALIDAÇÃO DO FORMULARIO
+    const valida = $('#frmcliente').valid();
+    // let acao = document.getElementById("edtacao");
+    if (valida == true) {
+        inserir();
+    }
 });
+
+$("#cpf").inputmask({
+    mask: '999.999.999-99'
+});
+
+//const cpf = document.querySelector("#cpf");
