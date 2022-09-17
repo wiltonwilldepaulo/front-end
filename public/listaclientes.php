@@ -48,20 +48,26 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
+                        <!-- AQUI TEMOS UMA LINHA -->
+                        <div class="row">                            
+                            <!-- AQUI TEMOS UMA COLUNA OCUPANDO 100% DO TAMANHO DA LINHA -->
                             <div class="col-12">
-                                <div class="alert alert-warning" role="alert">
-                                    <h4 class="alert-heading">Atenção!</h4>
-                                    Todos os campos com <span class="text-danger"> * </span> são obrigatórios para o
-                                    cadastro!
-
-                                    <div class="mb-0">
+                                <!-- AQUI TEMOS O COMPONENTE ALERT -->
+                                <div id="alerta" class="alert alert-warning" role="alert">
+                                    <!-- AQUI TEMOS O TITULO DO ALERT DO BOOTSTRAP -->
+                                    <div id="titulo" class="mb-0">
+                                        <h6 class="alert-heading">Atenção!</h6>
+                                        Todos os campos com <span class="text-danger"> * </span> são obrigatórios para o
+                                        cadastro!
+                                    </div>
+                                    <!-- AQUI TEMOS SPINNER PARA MENSAGEM DE SALVANDO -->
+                                    <div id="carregando" class="mb-0 d-none">
                                         <div class="spinner-border text-primary" role="status">
                                             <span class="visually-hidden">Loading...</span>
                                         </div>
-                                        <label>Salvando...</label>
+                                        <span>Salvando...</span>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
                         <div class="row">
