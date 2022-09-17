@@ -6,7 +6,7 @@ $('#frmcliente').validate({
     rules: {
         edtimagems: {
             required: true,
-            file: true,
+            file: true
         },
         agree: "required"
     },

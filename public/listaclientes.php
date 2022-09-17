@@ -51,8 +51,16 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="alert alert-warning" role="alert">
+                                    <h4 class="alert-heading">Atenção!</h4>
                                     Todos os campos com <span class="text-danger"> * </span> são obrigatórios para o
                                     cadastro!
+
+                                    <div class="mb-0">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <label>Salvando...</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
