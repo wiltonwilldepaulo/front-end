@@ -7,9 +7,19 @@ const carregando = document.querySelector("#carregando");
 
 //CONFIGURAÇÕES DOS PARAMENTRO DE VALIDAÇÃO DO FORMULÁRIO
 $('#frmcliente').validate({
+    //adiconamos regras de validação ao formulário
     rules: {
-
+        //bloqueamos uma quantidade minima de caracteres
+        //para o campo nome e sobre nome.
+        nome: {
+            minlength: 3
+        },
+        sobrenome: {
+            minlength: 3
+        },
     },
+    //definimos que as mensagem de formulário serão adicionadas a uma tag
+    // <span>Mensagem</span>
     errorElement: 'span',
     errorPlacement: function (error, element) {
         error.addClass('invalid-feedback');
@@ -55,8 +65,10 @@ async function inserir() {
         body: formData,
         cache: 'default'
     }
-    const response = await send('cadastro.php', opt);
+    const response = await fetch('cadastro.php', opt);
     const dados = await response.text();
+    console.log(dados);
+    console.log(dados);
     //VARIFICAMOS SE A RESPOSTA DO PHP OU SERVER É TRUE
     if (dados == 'true') {
         //CASO SEJA TRUE, EXIBIMOS A MENSAGEM DE SALVO COM SUCESSO,
@@ -83,7 +95,8 @@ async function inserir() {
             cadastro!`;
         }, 1000);
     } else {
-
+        titulo.className = `mb-0`;
+        titulo.innerHTML = `<p>${dados}</p>`;
     }
 }
 //MAPEAMOS O EVENTO DE CARREGAMENTO DO DOCUMENTO
