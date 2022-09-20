@@ -49,7 +49,7 @@
                     </div>
                     <div class="modal-body">
                         <!-- AQUI TEMOS UMA LINHA -->
-                        <div class="row">                            
+                        <div class="row">
                             <!-- AQUI TEMOS UMA COLUNA OCUPANDO 100% DO TAMANHO DA LINHA -->
                             <div class="col-12">
                                 <!-- AQUI TEMOS O COMPONENTE ALERT -->
@@ -62,28 +62,27 @@
                                     </div>
                                     <!-- AQUI TEMOS SPINNER PARA MENSAGEM DE SALVANDO -->
                                     <div id="carregando" class="mb-0 d-none">
-                                        <div class="spinner-border text-primary" role="status">
+                                        <div class="spinner-border text-primary spinner-border-sm" role="status">
                                             <span class="visually-hidden">Loading...</span>
                                         </div>
                                         <span>Salvando...</span>
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-
-                                <div class="mb-3">
+                                <div class="form-group">
                                     <label for="nome" class="form-label">Nome <span class="text-danger"> * </span>
                                     </label>
                                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome!" required>
                                 </div>
-                                <div class="mb-3">
+                                <div class="form-group">
                                     <label for="sobrenome" class="form-label">Sobre nome <span class="text-danger"> *
                                         </span> </label>
                                     <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobre nome!" required>
                                 </div>
-                                <div class="mb-3">
+                                <div class="form-group">
                                     <label for="cpf" class="form-label">Cpf</label>
                                     <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF!">
                                 </div>

@@ -49,6 +49,9 @@ async function lista_cliente() {
 async function inserir() {
     const form = document.querySelector("#frmcliente");
     const formData = new FormData(form);
+    /*formData.append('nome', document.getElementById('nome').value);
+    formData.append('sobrenome', document.getElementById('nome').value);
+    formData.append('cpf', document.getElementById('nome').value);*/
     const opt = {
         method: "POST",
         mode: 'cors',
@@ -71,6 +74,16 @@ async function inserir() {
         setTimeout(() => {
             //fecha o modal
             $("#cadastrocliente").modal('hide');
+            $("#frmcliente input").val('');
+            $("#alerta").removeClass('alert alert-success');
+            $('#alerta').addClass('alert alert-warning');
+            $("#titulo").removeClass('d-none');
+            $("#titulo").addClass('mb-0');
+            titulo.innerHTML = `
+            <h6 class="alert-heading">Atenção!</h6>
+            Todos os campos com <span class="text-danger"> * </span> 
+            são obrigatórios para o
+            cadastro!`;
         }, 1000);
     } else {
 
@@ -81,7 +94,9 @@ document.addEventListener("DOMContentLoaded", function () {
     lista_cliente();
 });
 
-atualiza.addEventListener('click', lista_cliente());
+atualiza.addEventListener('click', async function () {
+    lista_cliente();
+});
 
 salvar.addEventListener('click', function () {
     //RECEBEMOS O RESULTADO DA VALIDAÇÃO DO FORMULARIO
