@@ -8,11 +8,7 @@ const carregando = document.querySelector("#carregando");
 //CONFIGURAÇÕES DOS PARAMENTRO DE VALIDAÇÃO DO FORMULÁRIO
 $('#frmcliente').validate({
     rules: {
-        edtimagems: {
-            required: true,
-            file: true
-        },
-        agree: "required"
+
     },
     errorElement: 'span',
     errorPlacement: function (error, element) {
@@ -24,6 +20,7 @@ $('#frmcliente').validate({
     },
     unhighlight: function (element, errorClass, validClass) {
         $(element).removeClass('is-invalid');
+        $(element).addClass('is-valid');
     }
 });
 
