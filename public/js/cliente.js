@@ -33,7 +33,9 @@ $('#frmcliente').validate({
         $(element).addClass('is-valid');
     }
 });
-
+function deleta(id) {
+    alert(id);
+}
 async function lista_cliente() {
     //monstamos a configuração da requição
     //ao servidor http

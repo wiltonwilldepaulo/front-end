@@ -103,46 +103,49 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#cadastrocliente">
-                            <i class="fa-solid fa-plus"> </i> Cadastrar
-                        </button>
-                        <button id="btnatualiza" type="button" class="btn btn-primary">
-                            <i class="fa-solid fa-rotate-right"> </i> Atualizar
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="O que você procura?">
-                                    <span class="input-group-text" id="basic-addon2">
-                                        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-                                    </span>
+        <form id="clientes" name="clientes">
+            <input type="text" name="id" id="id">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#cadastrocliente">
+                                <i class="fa-solid fa-plus"> </i> Cadastrar
+                            </button>
+                            <button id="btnatualiza" type="button" class="btn btn-primary">
+                                <i class="fa-solid fa-rotate-right"> </i> Atualizar
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="O que você procura?">
+                                        <span class="input-group-text" id="basic-addon2">
+                                            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <td>Código</td>
-                                    <td>Nome</td>
-                                    <td>Sobre nome</td>
-                                    <td>Cpf</td>
-                                    <td>Ação</td>
-                                </tr>
-                            </thead>
-                            <tbody id="dados">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <td>Código</td>
+                                        <td>Nome</td>
+                                        <td>Sobre nome</td>
+                                        <td>Cpf</td>
+                                        <td>Ação</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="dados">
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
     <!-- TEMOS OS RECURSSOS DA BIBLIOTECA JQUERY -->
     <script src="js/jquery.min.js"></script>
