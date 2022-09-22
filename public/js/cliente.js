@@ -33,8 +33,21 @@ $('#frmcliente').validate({
         $(element).addClass('is-valid');
     }
 });
-function deleta(id) {
-    alert(id);
+async function deleta(id) {
+    $("#id").val(id);
+    const form = document.querySelector('#clientes');
+    formData = new FormData(form);
+    const opt = {
+        method: 'POST',
+        body: formData,
+        mode: 'cors',
+        cache: 'default'
+    };
+    const response = await fetch('delete.php', opt);
+    const data = await response.text();
+    if (data == 'true') {
+        $('#tr' + id).remove();
+    }
 }
 async function lista_cliente() {
     //monstamos a configuração da requição

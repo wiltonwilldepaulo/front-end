@@ -3,7 +3,7 @@ include "Conection.php";
 $clientes = $pdo->query('select * from pessoa;')->fetchAll();
 $dados = "";
 foreach ($clientes as $key => $value) {
-    $dados = $dados . "<tr>" .
+    $dados = $dados . "<tr id='tr" . $value['id'] . "'>" .
         "<td>" . $value['id'] . "</td>" .
         "<td>" . $value['nome'] . "</td>" .
         "<td>" . $value['sobre_nome'] . "</td>" .

@@ -2,12 +2,12 @@
 
 include_once 'Conection.php';
 try {
-    echo json_encode($_POST);
+    $id = ($_POST['id']);
 
-    //$sql = "delete from pessoa where id = $id;";
+    $sql = "delete from pessoa where id = $id;";
 
-    //$pdo->prepare($sql)->execute();
-    //echo "true";
+    $pdo->prepare($sql)->execute();
+    echo "true";
 } catch (PDOException $e) {
     var_dump($e->getMessage());
 }

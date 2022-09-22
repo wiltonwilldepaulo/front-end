@@ -104,7 +104,7 @@
     </div>
     <div class="container">
         <form id="clientes" name="clientes">
-            <input type="text" name="id" id="id">
+            <input type="hidden" name="id" id="id">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
