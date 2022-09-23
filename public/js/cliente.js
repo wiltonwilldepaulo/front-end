@@ -49,6 +49,18 @@ async function deleta(id) {
         $('#tr' + id).remove();
     }
 }
+function alterar(cliente) {
+    const id = cliente.id;
+    const nome = cliente.nome;
+    const sobreNome = cliente.sobre_nome;
+    const cpf = cliente.cpf;
+    $("#acao").val('update');
+    $("#id").val(id);
+    $("#nome").val(nome);
+    $("#sobrenome").val(sobreNome);
+    $("#cpf").val(cpf);
+    $("#cadastrocliente").modal('show');
+}
 async function lista_cliente() {
     //monstamos a configuração da requição
     //ao servidor http

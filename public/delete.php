@@ -2,12 +2,23 @@
 
 include_once 'Conection.php';
 try {
+    $acao = ($_POST['acao']);
     $id = ($_POST['id']);
 
-    $sql = "delete from pessoa where id = $id;";
+    switch ($acao) {
+        case 'insert':
 
-    $pdo->prepare($sql)->execute();
-    echo "true";
+            break;
+        case 'delete':
+            $sql = "delete from pessoa where id = $id;";
+            $pdo->prepare($sql)->execute();
+            echo "true";
+            break;
+        case 'update':
+
+            break;
+    }
 } catch (PDOException $e) {
     var_dump($e->getMessage());
 }
+

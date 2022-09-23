@@ -105,6 +105,7 @@
     <div class="container">
         <form id="clientes" name="clientes">
             <input type="hidden" name="id" id="id">
+            <input type="hidden" name="acao" id="acao">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
