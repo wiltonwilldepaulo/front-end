@@ -4,6 +4,7 @@ const salvar = document.querySelector("#btnsalvar");
 const alerta = document.querySelector("#alerta");
 const titulo = document.querySelector("#titulo");
 const carregando = document.querySelector("#carregando");
+const cadastro = document.querySelector("#btncadastro");
 
 //CONFIGURAÇÕES DOS PARAMENTRO DE VALIDAÇÃO DO FORMULÁRIO
 $('#frmcliente').validate({
@@ -34,6 +35,7 @@ $('#frmcliente').validate({
     }
 });
 async function deleta(id) {
+    alert(id);
     $("#id").val(id);
     const form = document.querySelector('#clientes');
     formData = new FormData(form);
@@ -54,12 +56,20 @@ function alterar(cliente) {
     const nome = cliente.nome;
     const sobreNome = cliente.sobre_nome;
     const cpf = cliente.cpf;
+
     $("#acao").val('update');
     $("#id").val(id);
     $("#nome").val(nome);
     $("#sobrenome").val(sobreNome);
     $("#cpf").val(cpf);
     $("#cadastrocliente").modal('show');
+
+}
+
+async function update() {
+    alerta.className = 'alert alert-success';
+    titulo.className = 'mb-0';
+    titulo.innerHTML = `<p>Alteração realizada com sucesso!`;
 }
 async function lista_cliente() {
     //monstamos a configuração da requição
@@ -71,21 +81,19 @@ async function lista_cliente() {
     }
     //A VARIAVEL response RECEBERÁ UMA PROMISSE
     //DE UMA TENTATIVA DE REQUISIÇÃO.
-    const response = await send('listacliente.php', opt);
+    const response = await fetch('listacliente.php', opt);
     //CONVERTEMOS O A RESPOSTA  PARA TEXTO
     //QUE TERÁ UMA ESTRUTURA HTML
     const html = await response.text();
     //PRINTAMOS NO CONSOLE O RESULTADO
-    //console.log(html);
+    console.log(html);
     document.getElementById('dados').innerHTML = html;
 }
 
 async function inserir() {
     const form = document.querySelector("#frmcliente");
     const formData = new FormData(form);
-    /*formData.append('nome', document.getElementById('nome').value);
-    formData.append('sobrenome', document.getElementById('nome').value);
-    formData.append('cpf', document.getElementById('nome').value);*/
+
     const opt = {
         method: "POST",
         mode: 'cors',
@@ -135,17 +143,34 @@ atualiza.addEventListener('click', async function () {
     lista_cliente();
 });
 
+cadastro.addEventListener('click', function () {
+    document.getElementById('acao').value = 'insert';
+});
+
 salvar.addEventListener('click', function () {
     //RECEBEMOS O RESULTADO DA VALIDAÇÃO DO FORMULARIO
     const valida = $('#frmcliente').valid();
     // let acao = document.getElementById("edtacao");
     if (valida == true) {
-        alerta.className = 'alert alert-primary';
+        if (document.getElementById('acao').value == 'update') {
+            titulo.className = 'd-none';
+            carregando.className = 'mb-0';
+            setTimeout(() => {
+                update();
+            }, 500);
+        } else if (document.getElementById('acao').value == 'insert') {
+            titulo.className = 'd-none';
+            carregando.className = 'mb-0';
+            setTimeout(() => {
+                inserir();
+            }, 500);
+        }
+        /*alerta.className = 'alert alert-primary';
         titulo.className = 'd-none';
         carregando.className = 'mb-0';
         setTimeout(() => {
             inserir();
-        }, 500);
+        }, 500);*/
     }
 });
 
