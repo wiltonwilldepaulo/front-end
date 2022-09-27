@@ -6,6 +6,7 @@ const titulo = document.querySelector("#titulo");
 const carregando = document.querySelector("#carregando");
 const cadastro = document.querySelector("#btncadastro");
 
+
 //CONFIGURAÇÕES DOS PARAMENTRO DE VALIDAÇÃO DO FORMULÁRIO
 $('#frmcliente').validate({
     //adiconamos regras de validação ao formulário
@@ -35,13 +36,12 @@ $('#frmcliente').validate({
     }
 });
 async function deleta(id) {
-    alert(id);
-    $("#id").val(id);
+    document.getElementById('idcliente').value = id;
     const form = document.querySelector('#clientes');
-    formData = new FormData(form);
+    dados = new FormData(form);
     const opt = {
         method: 'POST',
-        body: formData,
+        body: dados,
         mode: 'cors',
         cache: 'default'
     };
@@ -62,15 +62,39 @@ function alterar(cliente) {
     $("#nome").val(nome);
     $("#sobrenome").val(sobreNome);
     $("#cpf").val(cpf);
+    //exibimos o modal
     $("#cadastrocliente").modal('show');
-
 }
 
 async function update() {
-    alerta.className = 'alert alert-success';
+    /*alerta.className = 'alert alert-success';
     titulo.className = 'mb-0';
-    titulo.innerHTML = `<p>Alteração realizada com sucesso!`;
+    titulo.innerHTML = `<p>Alteração realizada com sucesso!`;**/
+    const form = document.querySelector("#frmcliente")
+    const dados = new FormData(form);
+
+    const opt = {
+        method: "POST",
+        mode: 'cors',
+        body: dados,
+        cache: 'default'
+
+    };
+    const response = await fetch('cadastro.php', opt);
+    const data = await response.text();
+    if (data == 'true') {
+        $("#acao").val('update');
+        $("#id").val('');
+        $("#nome").val('');
+        $("#sobrenome").val('');
+        $("#cpf").val('');
+        lista_cliente();
+        //ocultamos o modal
+        $("#cadastrocliente").modal('hide');
+
+    }
 }
+
 async function lista_cliente() {
     //monstamos a configuração da requição
     //ao servidor http
@@ -144,6 +168,7 @@ atualiza.addEventListener('click', async function () {
 });
 
 cadastro.addEventListener('click', function () {
+    $("#frmcliente input").val('');
     document.getElementById('acao').value = 'insert';
 });
 
